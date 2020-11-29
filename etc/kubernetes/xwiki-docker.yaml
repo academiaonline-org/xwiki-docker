@@ -33,10 +33,10 @@ spec:
       containers:
       - 
         args:
-        - $(MYSQL_ARG)
+        - $(MYSQL_ARGS)
         env:
         - 
-          name: MYSQL_ARG
+          name: MYSQL_ARGS
           valueFrom:
             configMapKeyRef:
               key: args
