@@ -1,4 +1,5 @@
 # What is XWiki
+![CI](https://github.com/academiaonline/xwiki-docker/workflows/CI/badge.svg?branch=docker)
 
 [XWiki](https://xwiki.org/) is a free wiki software platform written in Java with a design emphasis on extensibility. XWiki is an enterprise wiki. It includes WYSIWYG editing, OpenDocument based document import/export, semantic annotations and tagging, and advanced permissions management.
 
