@@ -127,7 +127,7 @@ spec:
           valueFrom:
             secretKeyRef:
               key: DB_USER
-              name: xwiki-secret
+              name: xwiki
         image: academiaonline/xwiki-docker:latest
         imagePullPolicy: Always
         name: xwiki
