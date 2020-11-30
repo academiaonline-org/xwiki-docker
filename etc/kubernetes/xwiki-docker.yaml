@@ -215,6 +215,7 @@ spec:
   - ReadWriteOnce
   hostPath:
     path: /tmp/mysql
+  storageClassName: local
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -227,6 +228,7 @@ spec:
   - ReadWriteOnce
   hostPath:
     path: /tmp/xwiki
+  storageClassName: local
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -238,6 +240,7 @@ spec:
   resources:
     requests:
       storage: 1Gi
+  storageClassName: local
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -249,6 +252,7 @@ spec:
   resources:
     requests:
       storage: 1Gi
+  storageClassName: local
 ---
 apiVersion: v1
 stringData:
@@ -298,4 +302,11 @@ spec:
   selector:
     app: xwiki
   type: NodePort
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: local
+provisioner: kubernetes.io/no-provisioner
+volumeBindingMode: WaitForFirstConsumer
 ---
