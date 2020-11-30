@@ -4,10 +4,10 @@
 #########################################################################
 apiVersion: v1
 data:
-  args-1: '--character-set-server=utf8mb4'
-  args-2: '--collation-server=utf8mb4_bin'
-  args-3: '--explicit-defaults-for-timestamp=1'
-  args-4: '--datadir=/var/lib/mysql/data'
+  args1: '--character-set-server=utf8mb4'
+  args2: '--collation-server=utf8mb4_bin'
+  args3: '--explicit-defaults-for-timestamp=1'
+  args4: '--datadir=/var/lib/mysql/data'
 kind: ConfigMap
 metadata:
   name: mysql-args
@@ -44,25 +44,25 @@ spec:
           name: MYSQL_ARG_1
           valueFrom:
             configMapKeyRef:
-              key: args-1
+              key: args1
               name: mysql-args
         - 
           name: MYSQL_ARG_2
           valueFrom:
             configMapKeyRef:
-              key: args-2
+              key: args2
               name: mysql-args
         - 
           name: MYSQL_ARG_3
           valueFrom:
             configMapKeyRef:
-              key: args-3
+              key: args3
               name: mysql-args
         - 
           name: MYSQL_ARG_4
           valueFrom:
             configMapKeyRef:
-              key: args-4
+              key: args4
               name: mysql-args
         - 
           name: MYSQL_DATABASE

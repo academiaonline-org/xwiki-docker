@@ -156,10 +156,6 @@ jobs:                                                                          #
                 kubectl get pvc
                 kubectl get rs
                 kubectl get po
-                kubectl describe pv
-                kubectl describe pvc
-                kubectl describe po
-                kubectl describe rs
          #       kubectl get deploy | grep "$app.*\([0-9]\)/\1" && break        ;
               done                                                             ;
           done                                                                 ;
