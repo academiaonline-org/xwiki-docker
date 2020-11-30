@@ -179,6 +179,6 @@ jobs:                                                                          #
             sleep 10                                                           ;
             curl localhost:30000/index.html                                    \
             |                                                                  \
-            grep "" && break                             ;
+            grep "XWiki is initializing" && break                              ;
           done                                                                 ;
                                                                                #
