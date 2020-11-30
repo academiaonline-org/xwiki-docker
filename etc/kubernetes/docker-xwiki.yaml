@@ -214,7 +214,7 @@ spec:
   accessModes:
   - ReadWriteOnce
   hostPath:
-    path: /docker-xwiki/mysql
+    path: /tmp/mysql
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -226,7 +226,7 @@ spec:
   accessModes:
   - ReadWriteOnce
   hostPath:
-    path: /docker-xwiki/xwiki
+    path: /tmp/xwiki
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
