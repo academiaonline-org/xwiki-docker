@@ -152,7 +152,7 @@ spec:
             secretKeyRef:
               key: DB_USER
               name: xwiki
-        image: academiaonline/docker-xwiki:latest
+        image: academiaonline/xwiki-docker:latest
         imagePullPolicy: Always
         name: xwiki
         ports:
