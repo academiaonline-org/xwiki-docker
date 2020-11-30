@@ -182,3 +182,6 @@ jobs:                                                                          #
             grep "XWiki is initializing" && break                              ;
           done                                                                 ;
                                                                                #
+                                                                               find /tmp/mysql
+                                                                               find /tmp/xwiki
+                                                                               df -h /tmp
