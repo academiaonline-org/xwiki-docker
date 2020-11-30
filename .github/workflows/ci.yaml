@@ -112,9 +112,7 @@ jobs:                                                                          #
                                                                                #
         echo $branch | grep ^v[0-9] && release=$branch || release=latest       ;
                                                                                #
-        project=docker-xwiki
         compose=etc/$mode/$project.yaml                                        ;
-        project=xwiki-docker
         sed -i /image:.*$project/s/$release/$release-testing/ $compose         ;
                                                                                #
         docker build -t $GITHUB_REPOSITORY:$release-testing --no-cache .       ;
@@ -147,20 +145,16 @@ jobs:                                                                          #
         sed -i /imagePullPolicy/s/Always/Never/ $compose                       ;
         kubectl apply -f $compose                                              ;
                                                                                #
-        for app in mysql xwiki                                   ;
+        for app in mysql xwiki                                                 ;
           do                                                                   \
             while true                                                         ;
               do                                                               \
-                sleep 100                                                       ;
-                kubectl get pv
-                kubectl get pvc
-                kubectl get rs
-                kubectl get po
-         #       kubectl get deploy | grep "$app.*\([0-9]\)/\1" && break        ;
+                sleep 10                                                       ;
+                kubectl get deploy | grep "$app.*\([0-9]\)/\1" && break        ;
               done                                                             ;
           done                                                                 ;
                                                                                #
-        for app in mysql                                    ;
+        for app in mysql                                                       ;
           do                                                                   \
             while true                                                         ;
               do                                                               \
@@ -169,7 +163,7 @@ jobs:                                                                          #
               done                                                             ;
           done                                                                 ;
                                                                                #
-        for app in xwiki                                           ;
+        for app in xwiki                                                       ;
           do                                                                   \
             while true                                                         ;
               do                                                               \
