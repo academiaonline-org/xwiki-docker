@@ -88,7 +88,8 @@ spec:
             secretKeyRef:
               key: MYSQL_USER
               name: mysql
-        image: mysql:5.7.32@sha256:ce6815027949d0b48e3097a94fa3ec062866a78868d50c7900c697c13574599f
+        #image: mysql:5.7.32@sha256:ce6815027949d0b48e3097a94fa3ec062866a78868d50c7900c697c13574599f
+        image: mysql:5.7
         name: mysql
         ports:
         - 
@@ -208,7 +209,6 @@ kind: PersistentVolume
 metadata:
   name: mysql
 spec:
-  storageClassName: manual
   capacity:
     storage: 1Gi
   accessModes:
@@ -221,7 +221,6 @@ kind: PersistentVolume
 metadata:
   name: xwiki
 spec:
-  storageClassName: manual
   capacity:
     storage: 1Gi
   accessModes:
@@ -239,7 +238,6 @@ spec:
   resources:
     requests:
       storage: 1Gi
-  storageClassName: manual
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -251,7 +249,6 @@ spec:
   resources:
     requests:
       storage: 1Gi
-  storageClassName: manual
 ---
 apiVersion: v1
 stringData:
