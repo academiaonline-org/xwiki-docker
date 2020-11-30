@@ -109,11 +109,12 @@ jobs:                                                                          #
                                                                                #
         branch=$(basename $GITHUB_REF)                                         ;
         project=$(basename $GITHUB_REPOSITORY)                                 ;
-        project=docker-xwiki
                                                                                #
         echo $branch | grep ^v[0-9] && release=$branch || release=latest       ;
                                                                                #
+        project=docker-xwiki
         compose=etc/$mode/$project.yaml                                        ;
+        project=xwiki-docker
         sed -i /image:.*$project/s/$release/$release-testing/ $compose         ;
                                                                                #
         docker build -t $GITHUB_REPOSITORY:$release-testing --no-cache .       ;
