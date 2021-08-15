@@ -62,6 +62,8 @@ RUN rm -rf /usr/local/tomcat/webapps/* && \\
 <% if (db == 'mysql') {
   println "# For MYSQL, download the MySQL driver version from the Maven Central repository since there's no up to "
   println "# date Debian repository for it anymore."
+  // Note: We currently cannot uprgade to 8.0.23 since we need all XWiki supported branches to have upgraded to
+  // liquibase 4.3.2 before we can upgrade, see https://jira.xwiki.org/browse/XWIKI-18515
   println "ENV MYSQL_JDBC_VERSION=\"8.0.22\""
   // Get the SHA256 from the JAR at https://search.maven.org/artifact/mysql/mysql-connector-java and using the
   // command line defined in build.gradle.
