@@ -1,0 +1,32 @@
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: secret
+stringData:
+  init.sql: grant all privileges on *.* to xwiki@'%'
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-mysql
+spec:
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-xwiki
+spec:
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-xwiki
+spec:
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: xwiki
+spec:
+---
